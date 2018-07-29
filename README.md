@@ -3,71 +3,9 @@
 
 A Bukkit plugin that allows easy creation and management of text based Holograms
 
-### Resources
-
-* [Resource Page](https://www.spigotmc.org/resources/holograms.4924/)
-* [Development Builds](http://ci.sainttx.com/job/Holograms/)
-
-### Building
-
-To successfully build Holograms using Maven, you must first run Spigot's BuildTools for several versions in order to compile.
-
-```
-java -jar BuildTools.jar --rev 1.12
-java -jar BuildTools.jar --rev 1.11
-java -jar BuildTools.jar --rev 1.10
-java -jar BuildTools.jar --rev 1.9.4
-java -jar BuildTools.jar --rev 1.9
-java -jar BuildTools.jar --rev 1.8.8
-java -jar BuildTools.jar --rev 1.8.3
-java -jar BuildTools.jar --rev 1.8
-```
-
-Then use the following command to build using Maven
-```
-mvn clean install
-```
-
-The resulting jar files will be found in the /target folder for each module.
-
 ### Using Holograms
 
-To use Holograms in your plugins, add the Holograms-API module to your build path. Then add Holograms as a dependency in your plugin.yml file:
-
-```yml
-depend: [Holograms]
-```
-
-You can also add Holograms as a Maven dependency:
-
-```xml
-<repositories>
-  <repository>
-    <id>maven.sainttx.com</id>
-    <url>http://maven.sainttx.com/nexus/content/groups/public/</url>
-  </repository>
-</repositories>
-
-<dependencies>
-  <dependency>
-    <groupId>com.sainttx.holograms</groupId>
-    <artifactId>holograms-api</artifactId>
-    <version>2.5.0-SNAPSHOT</version>
-    <scope>provided</scope>
-  </dependency>
-</dependencies>
-```
-
-Hologram creation is made easy with our API. Get a reference to the HologramManager and you're set.
-
-```java
-private HologramManager hologramManager;
-
-@Override
-public void onEnable() {
-    this.hologramManager = JavaPlugin.getPlugin(HologramPlugin.class).getHologramManager();
-}
-```
+To use Holograms in your plugins, add the Holograms-API module to your build path. Then add Holograms as a dependency in your plugin.yml file
 
 ##### Creating and Modifying Holograms
 
@@ -128,11 +66,3 @@ The subcommands for this plugin are as follows:
 * `/holograms removeline <hologramName> <index>`
 * `/holograms refresh`
 * `/holograms setline <hologramName> <index> <text>`
-
-
-Special Thanks To:
--------------
-
-![YourKit-Logo](https://www.yourkit.com/images/yklogo.png)
-
-YourKit supports open source projects with its full-featured Java Profiler. YourKit, LLC is the creator of [YourKit Java Profiler](https://www.yourkit.com/java/profiler/) and [YourKit .NET Profiler](https://www.yourkit.com/.net/profiler/), innovative and intelligent tools for profiling Java and .NET applications.
